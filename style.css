@@ -1,0 +1,372 @@
+:root{
+    --light-font-black : black;
+    --light-font-white : white;
+    --light-text-black : black;
+    --light-text-white : white;
+    --light-background-white : rgb(249, 234, 234);
+    --light-background-input-container : rgba(148, 148, 148, 0.491);
+    --light-background-button : white;
+    --light-background-input : white;
+    --light-background-list-container-white : rgba(0, 0, 0, 0.242);
+    --light-background-list-li-content : rgba(0, 0, 0, 0.126);
+    --light-background-list-delBtn : rgba(0, 0, 0, 0.205);
+    --light-background-list-done : rgb(84, 174, 84);
+    --light-background-list-undone : rgba(255, 255, 255, 0.845);
+    --light-icon-color : black;
+
+    --dark-font-white : white;
+    --dark-font-black : black;
+    --dark-text-black : rgb(0, 0, 0);
+    --dark-text-white : rgb(255, 255, 255);
+    --dark-background-white : rgb(45, 45, 45);
+    --dark-background-input-container : rgba(255, 255, 255, 0.167);
+    --dark-background-button : rgba(0, 0, 0, 0.153);
+    --dark-background-input : rgba(0, 0, 0, 0.463);
+    --dark-background-list-container-white : rgba(255, 255, 255, 0.053);
+    --dark-background-list-li-content : rgba(0, 0, 0, 0.16);
+    --dark-background-list-delBtn : rgba(0, 0, 0, 0.205);
+    --dark-background-list-done : rgb(128, 249, 128);
+    --dark-background-list-undone : rgba(255, 255, 255, 0.08);
+    --dark-icon-color : rgb(255, 255, 255);
+}
+
+
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+
+/* Light Mode */
+body#light button,
+body#light input,
+body#light select{
+    color: var(--light-font-black);
+    background-color: var(--light-background-input);
+    /* outline: none;
+    border: none; */
+    margin: 0px;
+}
+
+body#light{
+    background-color: var(--light-background-white);
+    margin: 0px;
+    padding: 0px;
+}
+
+.main#light{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-block: 75px;
+}
+
+body#light .main#light ion-icon{
+    color: var(--light-text-black);
+    margin: 0px;
+    padding: 0px;
+}
+
+.main#light #finish-symbol{
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main#light #time-symbol{
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main#light #theme{
+    border: 0px;
+    padding: 0px;
+    position: absolute;
+    background-color: transparent;
+    padding: 2.5px;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.main#light #theme ion-icon{
+    border: 0px;
+    padding: 0px;
+    font-size: 30px;
+}
+
+.main#light .input-container{
+    background-color: var(--light-background-input-container);
+    margin: 0px;
+    padding-block: 15px;
+    width: 565px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.main#light .input-container #input{
+    margin: 0px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.main#light .input-container #btn{
+    /* background-color: black; */
+    margin: 0px;
+    margin-left: 25px;
+    /* padding: 5px 15px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.main#light .input-container #btn #createBtn,
+.main#light .input-container #btn #deleteBtn{
+    margin:0px;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border:none;
+    font-size: 17.5px;
+}
+
+
+/* List */
+.main#light .list-ul{
+    background-color: var(--light-background-list-container-white);
+    list-style: none;
+    margin: 0px;
+    margin-block: 25px;
+    padding: 0px;
+    width: 565px;
+    border-radius: 5px;
+}
+
+.main#light .list-ul .list-li{
+    background-color: var(--light-background-list-undone);
+    margin: 0px;
+    padding: 0px;
+    margin: 10px 15px;
+    min-height: 50px;
+    /* padding: 2.5px 10px; */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main#light .list-ul .list-li .content{
+    margin: 0px;
+    padding: 0px;
+    margin-inline: 15px;
+    background-color: var(--light-background-list-li-content);
+    padding: 2.5px 10px;
+    border-radius: 5px;
+    /* font-weight: bold; */
+}
+
+.main#light .list-ul .list-li .btn{
+    padding: 2.5px 10px;
+    margin-inline: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.main#light .list-ul .list-li #del-btn,
+.main#light .list-ul .list-li #done-btn{
+    border: none;
+    /* border: 1.5px solid black; */
+    background-color: var(--light-background-list-delBtn);
+    border-radius: 5px;
+}
+
+.main#light .list-ul .list-li #del-btn ion-icon, 
+.main#light .list-ul .list-li #done-btn ion-icon{
+    color: var(--light-icon-color);
+    margin: 2.5px 5px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Dark Mode */
+
+body#dark button,
+body#dark input,
+body#dark select{
+    color: var(--light-font-black);
+    background-color: var(--dark-background-input);
+    /* outline: none;
+    border: none; */
+    margin: 0px;
+}
+
+body#dark{
+    background-color: var(--dark-background-white);
+    margin: 0px;
+    padding: 0px;
+}
+
+.main#dark{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-block: 75px;
+}
+
+body#dark .main#light ion-icon{
+    color: var(--dark-text-black);
+    margin: 0px;
+    padding: 0px;
+}
+
+.main#dark #finish-symbol{
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main#dark #time-symbol{
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main#dark #theme{
+    border: 0px;
+    padding: 0px;
+    position: absolute;
+    background-color: transparent;
+    padding: 2.5px;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.main#dark #theme ion-icon{
+    border: 0px;
+    padding: 0px;
+    font-size: 30px;
+}
+
+.main#dark .input-container{
+    background-color: var(--dark-background-input-container);
+    margin: 0px;
+    padding-block: 15px;
+    width: 565px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.main#dark .input-container #input{
+    margin: 0px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.main#dark .input-container #btn{
+    /* background-color: black; */
+    margin: 0px;
+    margin-left: 25px;
+    /* padding: 5px 15px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.main#dark .input-container #btn #createBtn,
+.main#dark .input-container #btn #deleteBtn{
+    margin:0px;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border:none;
+    font-size: 17.5px;
+}
+
+
+/* List */
+.main#dark .list-ul{
+    background-color: var(--dark-background-list-container-white);
+    list-style: none;
+    margin: 0px;
+    margin-block: 25px;
+    padding: 0px;
+    width: 565px;
+    border-radius: 5px;
+}
+
+.main#dark .list-ul .list-li{
+    background-color: var(--dark-background-list-undone);
+    margin: 0px;
+    padding: 0px;
+    margin: 10px 15px;
+    min-height: 50px;
+    /* padding: 2.5px 10px; */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main#dark .list-ul .list-li .content{
+    margin: 0px;
+    padding: 0px;
+    margin-inline: 15px;
+    background-color: var(--dark-background-list-li-content);
+    padding: 2.5px 10px;
+    border-radius: 5px;
+    /* font-weight: bold; */
+}
+
+.main#dark .list-ul .list-li .btn{
+    padding: 2.5px 10px;
+    margin-inline: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.main#dark .list-ul .list-li #del-btn,
+.main#dark .list-ul .list-li #done-btn{
+    border: none;
+    /* border: 1.5px solid black; */
+    background-color: var(--dark-background-list-delBtn);
+    border-radius: 5px;
+}
+
+.main#dark .list-ul .list-li #del-btn ion-icon, 
+.main#dark .list-ul .list-li #done-btn ion-icon{
+    color: var(--dark-icon-color);
+    margin: 2.5px 5px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
