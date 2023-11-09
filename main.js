@@ -32,7 +32,7 @@ $(function () {
 
 
     // Render LocalStorage
-    renderTheme();
+    // renderTheme();
 
 
     // Change Theme
@@ -43,7 +43,7 @@ $(function () {
             theme = 'false';
             localStorage.setItem('theme', theme);
     
-            $('*').css({'color' : 'var(--light-font-black)'})
+            // $('*').css({'color' : 'var(--light-font-black)'})
             $('body').attr('id', 'light')
             $('.main').attr('id', 'light');
         }
@@ -53,7 +53,7 @@ $(function () {
             theme = 'true';
             localStorage.setItem('theme', theme);
     
-            $('*').css({'color' : 'var(--dark-font-white)'})
+            // $('*').css({'color' : 'var(--dark-font-white)'})
             $('body').attr('id', 'dark')
             $('.main').attr('id', 'dark');
         } 
@@ -104,7 +104,7 @@ function removeList(e) {
     if (listItem && listUl.has(listItem).length) {
         listItem.remove();
     };
-
+    
     if(done != 0){
         done --;
         doneDOM.text(done);
@@ -114,35 +114,19 @@ function removeList(e) {
 // FinishList
 function finishList(e){
     const listItem = $(e).closest('li');
+    $(e).off('click');
     if(listItem && listUl.has(listItem).length){
+        listItem.css({
+            'backgroundColor' : 'var(--light-background-list-done)'
+        });
 
-        if(theme == 'true'){
-            listItem.css({
-                'backgroundColor' : 'var(--dark-background-list-done)',
-            });
-    
-            listItem.children('p').css({
-                'color' : 'var(--dark-text-white)'
-            });
-    
-            listItem.find('button ion-icon').css({
-                'color' : 'var(--dark-text-white)'
-            })
-        }
+        listItem.children('p').css({
+            'color' : 'var(--light-text-white)'
+        });
 
-        else{
-            listItem.css({
-                'backgroundColor' : 'var(--light-background-list-done)'
-            });
-    
-            listItem.children('p').css({
-                'color' : 'var(--light-text-white)'
-            });
-    
-            listItem.find('button ion-icon').css({
-                'color' : 'var(--light-text-white)'
-            })
-        }
+        listItem.find('button ion-icon').css({
+            'color' : 'var(--light-text-white)'
+        })
         done ++
         doneDOM.text(done);
     }
@@ -163,7 +147,7 @@ function getTheme(){
 
     else{
         localStorage.setItem('theme', false);
-        return false;
+        return 'false';
     }
 }
 
@@ -172,13 +156,13 @@ function getTheme(){
 function renderTheme(){
 
     if(theme == 'true'){
-        $('*').css('color', 'var(--dark-text-white)');
+        // $('*').css('color', 'var(--dark-text-white)');
         $('body').attr('id', 'dark');
         $('.main').attr('id', 'dark');
         themeDOM.html(lightIcon);
     }
     else{
-        $('*').css('color', 'var(--light-text-black)');
+        // $('*').css('color', 'var(--light-text-black)');
         $('body').attr('id', 'light');
         $('.main').attr('id', 'light');
         themeDOM.html(darkIcon);

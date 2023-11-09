@@ -37,6 +37,10 @@
 
 
 /* Light Mode */
+* body#light{
+    color:var(--light-font-black);
+}
+
 body#light button,
 body#light input,
 body#light select{
@@ -163,6 +167,7 @@ body#light .main#light ion-icon{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.5s ease;
 }
 
 .main#light .list-ul .list-li .content{
@@ -206,11 +211,14 @@ body#light .main#light ion-icon{
 
 
 /* Dark Mode */
+* body#dark{
+    color:var(--light-font-white);
+}
 
 body#dark button,
 body#dark input,
 body#dark select{
-    color: var(--light-font-black);
+    color: var(--light-font-white);
     background-color: var(--dark-background-input);
     /* outline: none;
     border: none; */
